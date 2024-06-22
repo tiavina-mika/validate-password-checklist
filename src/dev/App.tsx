@@ -1,5 +1,5 @@
 import { Container, ThemeProvider, createTheme } from '@mui/material';
-import PasswordChecklist from '../PasswordChecklist';
+import PasswordChecklist from './PasswordChecklist';
 
 const theme = createTheme();
 
