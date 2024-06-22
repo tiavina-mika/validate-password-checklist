@@ -31,25 +31,3 @@ export type ValidationMessages = {
   specialCharacters: string;
 }
 
-export type PasswordChecklistProps = {
-  /**
-   * class name for the input field
-   */
-  className?: string;
-  /**
-   * custom options for password validation
-   */
-  options?: CheckPasswordOptions;
-  /**
-   * custom icon for hiding the password
-   */
-  hidePasswordIcon?: ReactNode;
-  /**
-   * custom icon for showing the password
-   */
-  showPasswordIcon?: ReactNode;
-  /**
-   * custom validation messages for each password validation
-   */
-  validationMessages?: ValidationMessages;
-};
