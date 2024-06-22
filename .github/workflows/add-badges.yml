@@ -37,8 +37,8 @@ jobs:
                 "link": "https://www.typescriptlang.org"
               },
               {
-                "badge": "https://img.shields.io/github/workflow/status/${{ env.repo_owner }}/${{ env.repo_name }}/CI?style=flat-square",
-                "alt": "CI",
+                "badge": "https://github.com/${{ env.repo_owner }}/${{ env.repo_name }}/actions/workflows/release.yml/badge.svg"
+                "alt": "Release Status",
                 "link": "${{ env.repo_url }}/actions"
               }
             ]
