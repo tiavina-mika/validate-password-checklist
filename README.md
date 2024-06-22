@@ -211,7 +211,9 @@ validatePasswordChecklist(
 <br />
 
 ## Libraries using `validate-password-checklist`
-[mui-password-checklist](https://www.npmjs.com/package/mui-password-checklist)
+- [mui-password-checklist](https://www.npmjs.com/package/mui-password-checklist)
+- [password-checklist-input](https://www.npmjs.com/package/password-checklist-input)
+
 
 ## Contributing
 
