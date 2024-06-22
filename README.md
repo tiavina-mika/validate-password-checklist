@@ -25,6 +25,7 @@ import { validatePasswordChecklist } from 'validate-password-checklist';
 
 const result = validatePasswordChecklist('abcde');
 console.log(result);
+
 /*
 [
   {
@@ -61,6 +62,7 @@ console.log(result);
 ### All passed rules
 ```tsx
 validatePasswordChecklist('abcde8=F');
+
 /*
 [
   {
@@ -104,6 +106,8 @@ validatePasswordChecklist(
     number: 'Devrait contenir au moins un chiffre',
     specialCharacters: 'Devrait contenir au moins un caractère spécial',
   }
+)
+
 /*
 [
   {
@@ -145,6 +149,8 @@ validatePasswordChecklist(
     minLength: 6,
     allowedSpecialChar: "="
   }
+)
+
 /*
 [
   {
@@ -196,6 +202,9 @@ validatePasswordChecklist(
 |allowedSpecialChar|`string`|!@#$%^&*(),.?\":{}<>\\[\\]\\\\/`~;'_+=-|Override the allowed special characters
 
 <br />
+
+## Libraries using `validate-password-checklist`
+[mui-password-checklist](https://www.npmjs.com/package/mui-password-checklist)
 
 ## Contributing
 
