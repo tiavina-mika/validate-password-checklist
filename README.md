@@ -4,14 +4,6 @@
 A Javascript utility which can add rules to a password and return the status of each validation
 </p>
 
-## Demo
-
-- **[Demo](https://codesandbox.io/s/github/tiavina-mika/validate-password-checklist-demo)**
-
-<br />
-
-![Gif](https://github.com/tiavina-mika/validate-password-checklist/blob/main/screenshots/example.gif)
-
 ## Installation
 
 ```shell
@@ -23,93 +15,165 @@ or
 ```shell
 
 yarn add validate-password-checklist
-
-```
-Please note that [`@mui/material`](https://mui.com/material-ui/getting-started/installation/) (and their `@emotion/` peers) are peer dependencies, meaning you should ensure they are installed before installing `validate-password-checklist`.
-
-```shell
-npm install @mui/material @emotion/react @emotion/styled
-```
-or
-```shell
-yarn add @mui/material @emotion/react @emotion/styled
-```
-
 ## Get started
 
 ### Simple usage
 ```tsx
-import PasswordChecklist from 'validate-password-checklist';
-import { useState, ChangeEvent } from "react";
+import { validatePasswordChecklist } from 'validate-password-checklist';
 
-function App() {
-  const [password, setPassword] = useState<string>('');
-
-  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
+const result = validatePasswordChecklist('abcde');
+console.log(result);
+/*
+[
+  {
+    "pass": false,
+    "message": "Must be at least 8 characters",
+    "key": "minLength"
+  },
+  {
+    "pass": true,
+    "message": "Must contain at least one lowercase letter",
+    "key": "lowerCase"
+  },
+  {
+    "pass": false,
+    "message": "Must contain at least one uppercase letter",
+    "key": "upperCase"
+  },
+  {
+    "pass": false,
+    "message": "Must contain at least one number",
+    "key": "number"
+  },
+  {
+    "pass": false,
+    "message": "Must contain at least one special character",
+    "key": "specialCharacters"
   }
+]
+*/
 
-  return (
-    <PasswordChecklist value={password} onChange={handlePasswordChange} />
-  );
-}
 ```
 
-### Override
+
+### All passed rules
 ```tsx
-    <PasswordChecklist
-      // override class name
-      className='border-1 border-gray-500'
-      // override error messages
-      validationMessages={{
-        minLength: 'Devrait contenir au moins 6 caractères',
-        lowerCase: 'Devrait contenir au moins une lettre minuscule',
-        upperCase: 'Devrait contenir au moins une lettre majuscule',
-        number: 'Devrait contenir au moins un chiffre',
-        specialCharacters: 'Devrait contenir au moins un caractère spécial',
-      }}
-      // override options
-      options={{
-        minLength: 6,
-        allowedSpecialChar: "="
-      }}
-      // override TextFieldProps
-      fullWidth
-    />
+validatePasswordChecklist('abcde8=F');
+/*
+[
+  {
+    "pass": true,
+    "message": "Must be at least 8 characters",
+    "key": "minLength"
+  },
+  {
+    "pass": true,
+    "message": "Must contain at least one lowercase letter",
+    "key": "lowerCase"
+  },
+  {
+    "pass": true,
+    "message": "Must contain at least one uppercase letter",
+    "key": "upperCase"
+  },
+  {
+    "pass": true,
+    "message": "Must contain at least one number",
+    "key": "number"
+  },
+  {
+    "pass": true,
+    "message": "Must contain at least one special character",
+    "key": "specialCharacters"
+  }
+]
+*/
+
 ```
 
-### Custom icons
-
+### Override messages
 ```tsx
-  <PasswordChecklist
-    hidePasswordIcon={<EyeOff />}
-    showPasswordIcon={<EyeOn />}
-  />
+validatePasswordChecklist(
+  'abcde8=F',
+  {
+    minLength: 'Devrait contenir au moins 8 caractères',
+    lowerCase: 'Devrait contenir au moins une lettre minuscule',
+    upperCase: 'Devrait contenir au moins une lettre majuscule',
+    number: 'Devrait contenir au moins un chiffre',
+    specialCharacters: 'Devrait contenir au moins un caractère spécial',
+  }
+/*
+[
+  {
+    "pass": true,
+    "message": "Devrait contenir au moins 8 caractères",
+    "key": "minLength"
+  },
+  {
+    "pass": true,
+    "message": "Devrait contenir au moins une lettre minuscule",
+    "key": "lowerCase"
+  },
+  {
+    "pass": true,
+    "message": "Devrait contenir au moins une lettre majuscule",
+    "key": "upperCase"
+  },
+  {
+    "pass": true,
+    "message": "Devrait contenir au moins un chiffre",
+    "key": "number"
+  },
+  {
+    "pass": true,
+    "message": "Devrait contenir au moins un caractère spécial",
+    "key": "specialCharacters"
+  }
+]
+*/
+
 ```
 
-
-### Material-UI TextField props
-
+### Override options
 ```tsx
-  <PasswordChecklist
-    placeholder="Enter your password"
-    // ...other mui TextField props
-  />
+validatePasswordChecklist(
+  'ab8fff',
+  null,
+  {
+    minLength: 6,
+    allowedSpecialChar: "="
+  }
+/*
+[
+  {
+    "pass": true,
+    "message": "Must be at least 6 characters",
+    "key": "minLength"
+  },
+  {
+    "pass": true,
+    "message": "Must contain at least one lowercase letter",
+    "key": "lowerCase"
+  },
+  {
+    "pass": false,
+    "message": "Must contain at least one uppercase letter",
+    "key": "upperCase"
+  },
+  {
+    "pass": true,
+    "message": "Must contain at least one number",
+    "key": "number"
+  },
+  {
+    "pass": false,
+    "message": "Must contain at least one special character",
+    "key": "specialCharacters"
+  }
+]
+*/
+
 ```
-
-See [`here`](https://github.com/tiavina-mika/validate-password-checklist/tree/main/example) for more examples that use `PasswordChecklist`.
-
-## Props
-
-|Props |Type                          | Default value                         | Description |
-|----------------|-------------------------------|-----------------------------|-----------------------------|
-|options|`CheckPasswordOptions`|null|Override colors and labels of each strength
-|validationMessages|`ValidationMessages`|null| Override each password validation massages
-|className|`string`|empty|TextField class name
-|hidePasswordIcon|`ReactNode`|null|Custom icon for showing the password
-|hidePasswordIcon|`ReactNode`|null|Custom icon for hiding the password
-|...otherProps|`TextFieldProps`|null|All Material UI `TextField` props
-
 ## Types
 
 #### ValidationMessages

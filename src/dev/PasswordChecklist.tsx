@@ -75,6 +75,9 @@ const PasswordChecklist =  forwardRef<HTMLDivElement, PasswordChecklistProps & T
         }}
       />
 
+      <div>
+        <pre>{JSON.stringify(errors, null, 2)}</pre>
+      </div>
       {/* ------------------------------------------- */}
       {/* ------ password requirement checklist ----- */}
       {/* ------------------------------------------- */}

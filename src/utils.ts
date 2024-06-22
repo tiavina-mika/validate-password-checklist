@@ -1,6 +1,6 @@
 import { Check, DefaultErrorOption, ValidationMessages, ErrorOption, PasswordCheckListResult, CheckPasswordOptions } from "./types";
 
-export const validatePasswordChecklist = (password: string, message?: ValidationMessages, options?: CheckPasswordOptions): PasswordCheckListResult => {
+export const validatePasswordChecklist = (password: string, messages?: ValidationMessages, options?: CheckPasswordOptions): PasswordCheckListResult => {
   // -------------- default options -------------- //
   const passwordMinLength = options?.minLength || 8;
   const allowedSpecialChar = options?.allowedSpecialChar || "!@#$%^&*(),.?\":{}|<>\\[\\]\\\\/`~;'_+=-";
@@ -12,7 +12,7 @@ export const validatePasswordChecklist = (password: string, message?: Validation
     upperCase = 'Must contain at least one uppercase letter',
     number = 'Must contain at least one number',
     specialCharacters = 'Must contain at least one special character'
-  } = message || {};
+  } = messages || {};
 
   if (!password) return { allChecksPassed: false, validationMessages: [] };
 
