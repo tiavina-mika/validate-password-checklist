@@ -35,11 +35,6 @@ jobs:
                 "badge": "https://img.shields.io/badge/language-TypeScript-blue.svg?style=flat-square",
                 "alt": "Language",
                 "link": "https://www.typescriptlang.org"
-              },
-              {
-                "badge": "https://img.shields.io/actions/github/workflow/status/${{ env.repo_owner }}/${{ env.repo_name }}/release.yml?branch=main",
-                "alt": "Release Status",
-                "link": "${{ env.repo_url }}/actions"
               }
             ]
 
