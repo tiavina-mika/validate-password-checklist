@@ -1,7 +1,6 @@
-import { CheckPasswordOptions } from "check-password-complexity";
-import { Check, DefaultErrorOption, ValidationMessages, ErrorOption, PasswordCheckListResult } from "./types";
+import { Check, DefaultErrorOption, ValidationMessages, ErrorOption, PasswordCheckListResult, CheckPasswordOptions } from "./types";
 
-export const getPasswordChecklist = (password: string, message?: ValidationMessages, options?: CheckPasswordOptions): PasswordCheckListResult => {
+export const validatePasswordChecklist = (password: string, message?: ValidationMessages, options?: CheckPasswordOptions): PasswordCheckListResult => {
   // -------------- default options -------------- //
   const passwordMinLength = options?.minLength || 8;
   const allowedSpecialChar = options?.allowedSpecialChar || "!@#$%^&*(),.?\":{}|<>\\[\\]\\\\/`~;'_+=-";
