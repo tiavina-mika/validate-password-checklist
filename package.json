@@ -1,6 +1,6 @@
 {
   "name": "validate-password-checklist",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Javascript utility which can add rules to a password and return the status of each validation",
   "keywords": [
     "password",
