@@ -1,7 +1,9 @@
-import PasswordChecklist from './PasswordChecklist';
-
 export {
-  type PasswordChecklistProps as PasswordStrengthInputProps
+  type ValidationMessages,
+  type CheckPasswordOptions,
+  type PasswordCheckListResult,
 } from './types.d';
 
-export default PasswordChecklist;
+export {
+  validatePasswordChecklist
+} from './utils';
