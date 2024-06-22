@@ -1,32 +1,31 @@
-# mui-password-checklist
+# validate-password-checklist
 
 <p align="left">
-A <a href="https://mui.com/material-ui/getting-started/overview/">Material-UI</a> password input with list of password validation steps or conditions that should be fulfilled.
+A Javascript utility which can add rules to a password and return the status of each validation
 </p>
 
 ## Demo
 
-- **[CodeSandbox demo](https://codesandbox.io/s/github/tiavina-mika/mui-password-checklist-demo)**
-- **[Live demo](https://mui-password-checklist.netlify.app/)**
+- **[Demo](https://codesandbox.io/s/github/tiavina-mika/validate-password-checklist-demo)**
 
 <br />
 
-![Gif](https://github.com/tiavina-mika/mui-password-checklist/blob/main/screenshots/example.gif)
+![Gif](https://github.com/tiavina-mika/validate-password-checklist/blob/main/screenshots/example.gif)
 
 ## Installation
 
 ```shell
 
-npm install mui-password-checklist
+npm install validate-password-checklist
 
 ```
 or
 ```shell
 
-yarn add mui-password-checklist
+yarn add validate-password-checklist
 
 ```
-Please note that [`@mui/material`](https://mui.com/material-ui/getting-started/installation/) (and their `@emotion/` peers) are peer dependencies, meaning you should ensure they are installed before installing `mui-password-checklist`.
+Please note that [`@mui/material`](https://mui.com/material-ui/getting-started/installation/) (and their `@emotion/` peers) are peer dependencies, meaning you should ensure they are installed before installing `validate-password-checklist`.
 
 ```shell
 npm install @mui/material @emotion/react @emotion/styled
@@ -40,7 +39,7 @@ yarn add @mui/material @emotion/react @emotion/styled
 
 ### Simple usage
 ```tsx
-import PasswordChecklist from 'mui-password-checklist';
+import PasswordChecklist from 'validate-password-checklist';
 import { useState, ChangeEvent } from "react";
 
 function App() {
@@ -98,7 +97,7 @@ function App() {
   />
 ```
 
-See [`here`](https://github.com/tiavina-mika/mui-password-checklist/tree/main/example) for more examples that use `PasswordChecklist`.
+See [`here`](https://github.com/tiavina-mika/validate-password-checklist/tree/main/example) for more examples that use `PasswordChecklist`.
 
 ## Props
 
@@ -134,4 +133,4 @@ See [`here`](https://github.com/tiavina-mika/mui-password-checklist/tree/main/ex
 
 ## Contributing
 
-Get started [here](https://github.com/tiavina-mika/mui-password-checklist/blob/main/CONTRIBUTING.md).
+Get started [here](https://github.com/tiavina-mika/validate-password-checklist/blob/main/CONTRIBUTING.md).
