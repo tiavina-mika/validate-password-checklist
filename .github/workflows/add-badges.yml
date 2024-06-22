@@ -37,12 +37,12 @@ jobs:
                 "link": "https://www.typescriptlang.org"
               },
               {
-                "badge": "https://img.shields.io/github/workflow/status/${{ env.repo_owner }}/${{ env.repo_name }}/release?style=flat-square",
+                "badge": "https://img.shields.io/github/workflow/status/${{ env.repo_owner }}/${{ env.repo_name }}/release.yml?branch=main?style=flat-square",
                 "alt": "Release Status",
                 "link": "${{ env.repo_url }}/actions"
               }
             ]
-              
+
       # if adding the last commit badge
       #   {
       #   "badge": "https://img.shields.io/github/last-commit/${{ env.repo_owner }}/${{ env.repo_name }}?style=flat-square",
