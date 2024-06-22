@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode, forwardRef, useState } from 'react';
+import { ChangeEvent, forwardRef, useState } from 'react';
 
 import { IconButton, TextFieldProps, TextField, Theme, useTheme, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 
@@ -87,14 +87,14 @@ const PasswordChecklist =  forwardRef<HTMLDivElement, PasswordChecklistProps & T
               <ListItem key={index} sx={{ padding: 0 }}>
                 <ListItemIcon sx={{ minWidth: 24, '& svg': { width: 18 } }}>
                   {/* ------ left icon ------ */}
-                  {error.pass
+                  {error.passed
                     ? <Check fill={theme.palette.success.main} />
                     : <Close fill={theme.palette.error.main} />
                   }
                 </ListItemIcon>
                 {/* ------ error message ------ */}
                 <ListItemText
-                  sx={{ color: (theme: Theme) => error.pass
+                  sx={{ color: (theme: Theme) => error.passed
                     ? theme.palette.success.main
                     : theme.palette.error.main
                   }}

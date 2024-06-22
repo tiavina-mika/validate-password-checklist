@@ -22,41 +22,41 @@ export const validatePasswordChecklist = (password: string, messages?: Validatio
   const checks: Check[] = [
     // password length
     {
-      pass: password.length >= passwordMinLength,
+      passed: password.length >= passwordMinLength,
       key: 'minLength'
     },
     // password has lowercase
     {
-      pass: /[a-z]/.test(password),
+      passed: /[a-z]/.test(password),
       key: 'lowerCase'
     },
     // password has uppercase
     {
-      pass: /[A-Z]/.test(password),
+      passed: /[A-Z]/.test(password),
       key: 'upperCase'
     },
     // password has number
     {
-      pass: /\d/.test(password),
+      passed: /\d/.test(password),
       key: 'number'
     },
   ];
 
   const validationMessages: DefaultErrorOption = {
-    minLength: { pass: false, message: minLength },
-    lowerCase: { pass: false, message: lowerCase },
-    upperCase: { pass: false, message: upperCase },
-    number: { pass: false, message: number },
+    minLength: { passed: false, message: minLength },
+    lowerCase: { passed: false, message: lowerCase },
+    upperCase: { passed: false, message: upperCase },
+    number: { passed: false, message: number },
   };
 
   // password has special character
   if (allowedSpecialChar) {
     checks.push({
-      pass: new RegExp(`[${allowedSpecialChar}]`).test(password),
+      passed: new RegExp(`[${allowedSpecialChar}]`).test(password),
       key: "specialCharacters",
     });
 
-    (validationMessages as ErrorOption).specialCharacters = { pass: false, message: specialCharacters };
+    (validationMessages as ErrorOption).specialCharacters = { passed: false, message: specialCharacters };
   }
 
   let allChecksPassed: boolean = false;
@@ -64,10 +64,10 @@ export const validatePasswordChecklist = (password: string, messages?: Validatio
   checks.forEach((check: Check) => {
     if ((validationMessages as ErrorOption)[check.key]) {
       // check if the password passes the criteria
-      if (check.pass) {
+      if (check.passed) {
         (validationMessages as ErrorOption)[check.key] = {
           ...(validationMessages as ErrorOption)[check.key],
-          pass: true,
+          passed: true,
           key: check.key
         };
         allChecksPassed = true;

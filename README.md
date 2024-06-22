@@ -28,27 +28,27 @@ console.log(result);
 /*
 [
   {
-    "pass": false,
+    "passed": false,
     "message": "Must be at least 8 characters",
     "key": "minLength"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Must contain at least one lowercase letter",
     "key": "lowerCase"
   },
   {
-    "pass": false,
+    "passed": false,
     "message": "Must contain at least one uppercase letter",
     "key": "upperCase"
   },
   {
-    "pass": false,
+    "passed": false,
     "message": "Must contain at least one number",
     "key": "number"
   },
   {
-    "pass": false,
+    "passed": false,
     "message": "Must contain at least one special character",
     "key": "specialCharacters"
   }
@@ -64,27 +64,27 @@ validatePasswordChecklist('abcde8=F');
 /*
 [
   {
-    "pass": true,
+    "passed": true,
     "message": "Must be at least 8 characters",
     "key": "minLength"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Must contain at least one lowercase letter",
     "key": "lowerCase"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Must contain at least one uppercase letter",
     "key": "upperCase"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Must contain at least one number",
     "key": "number"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Must contain at least one special character",
     "key": "specialCharacters"
   }
@@ -107,27 +107,27 @@ validatePasswordChecklist(
 /*
 [
   {
-    "pass": true,
+    "passed": true,
     "message": "Devrait contenir au moins 8 caractères",
     "key": "minLength"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Devrait contenir au moins une lettre minuscule",
     "key": "lowerCase"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Devrait contenir au moins une lettre majuscule",
     "key": "upperCase"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Devrait contenir au moins un chiffre",
     "key": "number"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Devrait contenir au moins un caractère spécial",
     "key": "specialCharacters"
   }
@@ -148,27 +148,27 @@ validatePasswordChecklist(
 /*
 [
   {
-    "pass": true,
+    "passed": true,
     "message": "Must be at least 6 characters",
     "key": "minLength"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Must contain at least one lowercase letter",
     "key": "lowerCase"
   },
   {
-    "pass": false,
+    "passed": false,
     "message": "Must contain at least one uppercase letter",
     "key": "upperCase"
   },
   {
-    "pass": true,
+    "passed": true,
     "message": "Must contain at least one number",
     "key": "number"
   },
   {
-    "pass": false,
+    "passed": false,
     "message": "Must contain at least one special character",
     "key": "specialCharacters"
   }

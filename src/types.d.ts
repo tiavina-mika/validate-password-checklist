@@ -9,7 +9,7 @@ type DefaultErrorOption = Record<'minLength' | 'lowerCase' | 'upperCase' | 'numb
 type ErrorOption = DefaultErrorOption & Record<'specialCharacters', PasswordsComplexityPass>;
 
 export type Check = {
-  pass: boolean;
+  passed: boolean;
   key: keyof ErrorOption;
 }
 export type PasswordCheckListResult = {
@@ -18,7 +18,7 @@ export type PasswordCheckListResult = {
 }
 
 export type PasswordsComplexityPass = {
-  pass: boolean;
+  passed: boolean;
   message: string;
   key?: string;
 };
@@ -30,4 +30,3 @@ export type ValidationMessages = {
   number: string;
   specialCharacters: string;
 }
-

@@ -8,7 +8,7 @@ describe('check password', () => {
     const { allChecksPassed, validationMessages } = validatePasswordChecklist('abcde');
     expect(allChecksPassed).toBe(false);
     const currentPassed = validationMessages.find((error) => error.key === 'lowerCase');
-    expect(currentPassed?.pass).toBe(true);
+    expect(currentPassed?.passed).toBe(true);
   });
 
   test('check two passed check', () => {
