@@ -5,6 +5,10 @@ A Javascript utility which can add rules to a password and return the status of 
 </p>
 
 <!-- [START BADGES] -->
+<!-- Please keep comment here to allow auto update -->
+[![NPM Version](https://img.shields.io/npm/v/validate-password-checklist?style=flat-square)](https://www.npmjs.com/package/validate-password-checklist)
+[![Language](https://img.shields.io/badge/language-TypeScript-blue.svg?style=flat-square)](https://www.typescriptlang.org)
+[![CI](https://img.shields.io/github/workflow/status/tiavina-mika/validate-password-checklist/CI?style=flat-square)](https://github.com/tiavina-mika/validate-password-checklist/actions)
 <!-- [END BADGES] -->
 
 ## Installation
