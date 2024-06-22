@@ -42,6 +42,7 @@ jobs:
                 "link": "${{ env.repo_url }}/actions"
               }
             ]
+              
       # if adding the last commit badge
       #   {
       #   "badge": "https://img.shields.io/github/last-commit/${{ env.repo_owner }}/${{ env.repo_name }}?style=flat-square",
