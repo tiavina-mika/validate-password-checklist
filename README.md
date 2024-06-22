@@ -15,6 +15,8 @@ or
 ```shell
 
 yarn add validate-password-checklist
+```
+
 ## Get started
 
 ### Simple usage
